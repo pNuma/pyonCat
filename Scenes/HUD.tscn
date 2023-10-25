@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://ex0ybpxxhoru"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_ij6fv"]
+[ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="1_k16dy"]
+[ext_resource type="Texture2D" uid="uid://dhqumoeomlum2" path="res://Sprites/Label_bg.png" id="3_vfm3n"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ij6fv")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 449.0
+offset_right = 768.0
+offset_bottom = 706.0
+grow_vertical = 2
+rotation = -1.5708
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 220
+text = "pyonCat"
+
+[node name="ColorRect" type="ColorRect" parent="Title"]
+z_index = -1
+layout_mode = 0
+offset_left = -0.783493
+offset_top = 37.1868
+offset_right = 39.2165
+offset_bottom = 77.1868
+scale = Vector2(22.5316, 5.09403)
+color = Color(0.211765, 0.0666667, 0.054902, 0.415686)
+
+[node name="RemainTime" type="Label" parent="."]
+offset_left = 1030.0
+offset_top = 143.0
+offset_right = 1118.0
+offset_bottom = 202.0
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 50
+text = "100"
+horizontal_alignment = 1
+
+[node name="YarukiLabel" type="Label" parent="RemainTime"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -80.0
+offset_right = 130.0
+offset_bottom = -10.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 60
+text = "やる気"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+offset_left = 1001.0
+offset_top = 326.0
+offset_right = 1144.0
+offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -80.0
+offset_right = 161.0
+offset_bottom = -10.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 60
+text = "Score"
+horizontal_alignment = 1
+
+[node name="YarukiPlus" type="Label" parent="."]
+offset_left = 1117.0
+offset_top = 137.0
+offset_right = 1147.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.929412, 0.929412, 0.929412, 1)
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 30
+text = "+5"
+
+[node name="YarukiMinus" type="Label" parent="."]
+offset_left = 1117.0
+offset_top = 174.0
+offset_right = 1201.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0.945098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 30
+text = "-5"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 365.0
+offset_top = 412.0
+offset_right = 967.0
+offset_bottom = 547.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 50
+text = "ボタンをクリックして
+スタート！"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Message"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+offset_left = 578.0
+offset_top = -25.0
+offset_right = 641.0
+offset_bottom = 39.0
+rotation = 1.5708
+scale = Vector2(3.52, 8.88)
+texture = ExtResource("3_vfm3n")
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 554.0
+offset_top = 630.0
+offset_right = 752.0
+offset_bottom = 717.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 42
+text = "Start"
+
+[node name="HighScore" type="Label" parent="."]
+offset_left = 1001.0
+offset_top = 651.0
+offset_right = 1144.0
+offset_bottom = 710.0
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="HighScore"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -80.0
+offset_right = 161.0
+offset_bottom = -10.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 60
+text = "High"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 1201.0
+offset_right = 1241.0
+offset_bottom = 40.0
+scale = Vector2(-5.94607, 22.6737)
+color = Color(0.211765, 0.0666667, 0.054902, 0.415686)
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

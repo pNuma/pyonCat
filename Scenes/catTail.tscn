@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://br6li2hw53qt5"]
+
+[ext_resource type="Script" path="res://Scripts/catTail.gd" id="1_e4dcp"]
+[ext_resource type="Texture2D" uid="uid://d3jt3o1okomf6" path="res://Sprites/Player_tail1.png" id="2_s3yut"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdvma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s3yut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_topcb"]
+radius = 50.0
+height = 178.0
+
+[node name="CatTail" type="CharacterBody2D"]
+collision_layer = 2048
+collision_mask = 2
+script = ExtResource("1_e4dcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pdvma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 12)
+shape = SubResource("CapsuleShape2D_topcb")

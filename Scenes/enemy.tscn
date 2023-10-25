@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://ba8ns67se76hv"]
+
+[ext_resource type="Texture2D" uid="uid://k2db3rgrg06s" path="res://Sprites/enemy_fish.png" id="1_heevt"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_yjyn5"]
+[ext_resource type="Texture2D" uid="uid://c477h3pbt2q4x" path="res://Sprites/minusScore.png" id="2_y3e1e"]
+[ext_resource type="Texture2D" uid="uid://durjvlrfiliy4" path="res://Sprites/fish.png" id="3_hg0p3"]
+[ext_resource type="Texture2D" uid="uid://yab24equo8lj" path="res://Sprites/plusScore.png" id="3_wwrkj"]
+[ext_resource type="Texture2D" uid="uid://dekssndyetd75" path="res://Sprites/green_onion.png" id="4_syepm"]
+[ext_resource type="Texture2D" uid="uid://dvq70sdmxankx" path="res://Sprites/human.png" id="5_s76wx"]
+[ext_resource type="Texture2D" uid="uid://eppkh1qqpem4" path="res://Sprites/oct.png" id="6_la2in"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgjju"]
+atlas = ExtResource("1_heevt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxi2y"]
+atlas = ExtResource("1_heevt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6gix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3e1e")
+}],
+"loop": true,
+"name": &"P_destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wwrkj")
+}],
+"loop": true,
+"name": &"T_destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgjju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxi2y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hg0p3")
+}],
+"loop": true,
+"name": &"fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_syepm")
+}],
+"loop": true,
+"name": &"green_onion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s76wx")
+}],
+"loop": true,
+"name": &"human",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_la2in")
+}],
+"loop": true,
+"name": &"oct",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vafpd"]
+radius = 13.0
+height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_os0cf"]
+radius = 15.0
+height = 46.0
+
+[node name="Enemy" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2049
+gravity_scale = 0.0
+script = ExtResource("1_yjyn5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r6gix")
+animation = &"T_destroy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_vafpd")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2049
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 0)
+shape = SubResource("CapsuleShape2D_os0cf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

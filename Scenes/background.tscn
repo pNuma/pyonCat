@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsp04pubukw18"]
+
+[ext_resource type="Texture2D" uid="uid://ba6on5g7qhqhw" path="res://Sprites/background.png" id="1_lrgs7"]
+
+[node name="Background" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -639.0
+offset_top = -389.0
+offset_right = 1580.0
+offset_bottom = 1115.0
+scale = Vector2(0.9, 0.92)
+texture = ExtResource("1_lrgs7")
