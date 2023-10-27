@@ -72,6 +72,7 @@ func new_game():
 	My_Global._is_gameover = false
 	My_Global._is_gameclear=false
 	$Player.position=$StartPosition.position
+	$Player/catTail.rotation_speed = 250
 	$TileMap.show()
 	$Node2D.show()
 	$Player.show()
@@ -97,7 +98,7 @@ func _on_enemy_timer_timeout():
 
 func _on_cat_can_goal():
 	$RemainTimer.stop()
-	My_Global.my_score=My_Global.remain_time*10
+	My_Global.my_score+=My_Global.remain_time*10
 	My_Global._is_gameclear=true
 	game_over()
 

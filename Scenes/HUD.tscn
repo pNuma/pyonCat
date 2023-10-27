@@ -22,15 +22,14 @@ theme_override_fonts/font = ExtResource("1_k16dy")
 theme_override_font_sizes/font_size = 220
 text = "pyonCat"
 
-[node name="ColorRect" type="ColorRect" parent="Title"]
-z_index = -1
+[node name="Label" type="Label" parent="Title"]
 layout_mode = 0
-offset_left = -0.783493
-offset_top = 37.1868
-offset_right = 39.2165
-offset_bottom = 77.1868
-scale = Vector2(22.5316, 5.09403)
-color = Color(0.211765, 0.0666667, 0.054902, 0.415686)
+offset_left = 760.999
+offset_top = 180.003
+offset_right = 894.999
+offset_bottom = 206.003
+theme_override_fonts/font = ExtResource("1_k16dy")
+text = "made with Godot"
 
 [node name="RemainTime" type="Label" parent="."]
 offset_left = 1030.0
@@ -114,6 +113,7 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Message"]
 self_modulate = Color(0, 0, 0, 1)
 z_index = -1
+layout_mode = 0
 offset_left = 578.0
 offset_top = -25.0
 offset_right = 641.0
@@ -135,6 +135,24 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_k16dy")
 theme_override_font_sizes/font_size = 42
 text = "Start"
+
+[node name="ColorRect" type="ColorRect" parent="StartButton"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 744.0
+offset_top = -838.5
+offset_right = 784.0
+offset_bottom = -798.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-39.5854, 30.6615)
+mouse_filter = 1
+color = Color(0.133333, 0.478431, 0.678431, 0.952941)
 
 [node name="HighScore" type="Label" parent="."]
 offset_left = 1001.0
@@ -165,7 +183,32 @@ offset_left = 1201.0
 offset_right = 1241.0
 offset_bottom = 40.0
 scale = Vector2(-5.94607, 22.6737)
-color = Color(0.211765, 0.0666667, 0.054902, 0.415686)
+color = Color(0.133333, 0.478431, 0.678431, 0.952941)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 447.0
+offset_right = 37.0
+offset_bottom = 487.0
+grow_vertical = 2
+scale = Vector2(5.141, -22.52)
+color = Color(0.133333, 0.478431, 0.678431, 0.952941)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 970.0
+offset_top = 777.0
+offset_right = 1180.0
+offset_bottom = 889.0
+theme_override_fonts/font = ExtResource("1_k16dy")
+theme_override_font_sizes/font_size = 21
+text = "→キー：右移動
+←キー：左移動
+↑キー：しっぽ逆回転
+space：ジャンプ"
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

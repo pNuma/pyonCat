@@ -1,13 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsp04pubukw18"]
+[gd_scene load_steps=4 format=3 uid="uid://bsp04pubukw18"]
 
 [ext_resource type="Texture2D" uid="uid://ba6on5g7qhqhw" path="res://Sprites/background.png" id="1_lrgs7"]
+[ext_resource type="Texture2D" uid="uid://c065hscxs1837" path="res://Sprites/mountain_bg.png" id="2_wgtap"]
+[ext_resource type="Texture2D" uid="uid://sbfryquegrmb" path="res://Sprites/night_sky_bg.png" id="3_ymmr5"]
 
-[node name="Background" type="CanvasLayer"]
+[node name="Background" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -639.0
-offset_top = -389.0
-offset_right = 1580.0
-offset_bottom = 1115.0
-scale = Vector2(0.9, 0.92)
+offset_left = -1658.0
+offset_top = -3322.0
+offset_right = 1266.0
+offset_bottom = -1193.0
+scale = Vector2(1.02, 0.96)
 texture = ExtResource("1_lrgs7")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -1363.0
+offset_top = -1343.0
+offset_right = 1339.0
+offset_bottom = 468.0
+scale = Vector2(1, 1.56)
+texture = ExtResource("2_wgtap")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = -1319.0
+offset_top = -5767.0
+offset_right = 1311.0
+offset_bottom = -3829.0
+scale = Vector2(1, 1.28)
+texture = ExtResource("3_ymmr5")
