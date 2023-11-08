@@ -71,6 +71,8 @@ func new_game():
 	My_Global.remain_time = 100
 	My_Global._is_gameover = false
 	My_Global._is_gameclear=false
+	My_Global.my_score=0
+	ele_temp = 0
 	$Player.position=$StartPosition.position
 	$Player/catTail.rotation_speed = 250
 	$TileMap.show()
