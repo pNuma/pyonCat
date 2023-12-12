@@ -14,9 +14,11 @@ Godot Engineで初めて作成したゲーム
 上から降ってくる敵のスプライトは友人に描いてもらいました。
 
 環境
-windows11 pro
-Godot 4.1.1
+windows11 pro <br>
+
+Godot 4.1.1 <br>
+https://godotengine.org/license/
  
 使用フォント
-ノスタルドット（M+）
+ノスタルドット（M+） <br>
 https://logotype.jp/nosutaru-dot.html
