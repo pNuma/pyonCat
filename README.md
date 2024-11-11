@@ -1,23 +1,22 @@
 # pyonCat
-Godot Engineで初めて作成したゲーム
-
-
+## 概要
+Godot Engineで初めて作成したゲーム <br>
 ジャンプを駆使して頂上を目指して登る2Dアクションゲームです。 <br>
-プレイする際は pyonBuild/pyonCat.exeを実行するか，プロジェクトにスプライトを追加してビルドして頂けると助かります。 <br>
-あまり検証できていませんが、フルHD画面のwindows11以外で実行するとレイアウトが崩れることが有るようです。 <br>
-
-
-文化祭に間に合わせるために使い方の勉強とスプライト作成含めて5日で作成 <br>
-また，Godot公式のチュートリアルをかなり参考にしています。 <br>
+<br>
+Godot公式のチュートリアルをかなり参考にしています。 <br>
 →https://docs.godotengine.org/ja/4.x/getting_started/first_2d_game/index.html <br>
 
 上から降ってくる敵のスプライトは友人に描いてもらいました。
 
-環境 <br>
-windows11 pro <br>
-Godot 4.1.1 <br>
+## 実行
+プレイする際は pyonBuild/pyonCat.exeを実行するか，プロジェクトにスプライトを追加してビルドして頂けると助かります。 <br>
+あまり検証できていませんが、フルHD画面のwindows11以外で実行するとレイアウトが崩れることが有るようです。 <br>
+
+## 環境 <br>
+- windows11 pro <br>
+- Godot 4.1.1 <br>
 https://godotengine.org/license/
  
-使用フォント
+## 使用フォント
 ノスタルドット（M+） <br>
 https://logotype.jp/nosutaru-dot.html
