@@ -1,0 +1,183 @@
+[gd_scene load_steps=16 format=3 uid="uid://mtmxk2jxqjo0"]
+
+[ext_resource type="Script" path="res://Scenes/title.gd" id="1_h1jw8"]
+[ext_resource type="Texture2D" uid="uid://bcecab5xx41ok" path="res://Sprites/titleロゴ.png" id="1_pwxag"]
+[ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="2_ufxmt"]
+[ext_resource type="Script" path="res://Scenes/SelectButtonBOX.gd" id="3_0qswp"]
+[ext_resource type="Script" path="res://Scenes/StartButton.gd" id="3_j21ji"]
+[ext_resource type="Script" path="res://Scenes/TutorialButton.gd" id="6_x40kn"]
+[ext_resource type="Script" path="res://Scenes/OptionButton.gd" id="7_60rds"]
+[ext_resource type="Script" path="res://Scenes/ExitButton.gd" id="8_opp0e"]
+[ext_resource type="PackedScene" uid="uid://ermkwt1sn0hx" path="res://Scenes/cat_can.tscn" id="9_0ts57"]
+[ext_resource type="Script" path="res://Scenes/SelectCan.gd" id="9_bw3pr"]
+[ext_resource type="Texture2D" uid="uid://nhms2vtbsbkw" path="res://Sprites/Player_jump1.png" id="11_5vvv3"]
+[ext_resource type="Texture2D" uid="uid://42dr71rfjt8m" path="res://Sprites/Player_walk1.png" id="12_5qknn"]
+[ext_resource type="Texture2D" uid="uid://d3jt3o1okomf6" path="res://Sprites/Player_tail1.png" id="14_qo7yj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_by56b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_5vvv3")
+}],
+"loop": true,
+"name": &"decision",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_5qknn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxalw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qo7yj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1jw8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 51.0
+offset_right = 500.0
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_pwxag")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -450.0
+offset_right = 600.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.133333, 0.478431, 0.678431, 0.952941)
+
+[node name="SelectButtonBOX" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -27.0
+offset_right = 203.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_0qswp")
+
+[node name="StartButton" type="Button" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("2_ufxmt")
+theme_override_font_sizes/font_size = 75
+text = "GAME START"
+flat = true
+alignment = 0
+script = ExtResource("3_j21ji")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="TutorialButton" type="Button" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ufxmt")
+theme_override_font_sizes/font_size = 75
+text = "TUTORIAL"
+flat = true
+alignment = 0
+script = ExtResource("6_x40kn")
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="OptionButton" type="Button" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ufxmt")
+theme_override_font_sizes/font_size = 75
+text = "OPTION"
+flat = true
+alignment = 0
+script = ExtResource("7_60rds")
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/SelectButtonBOX"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ufxmt")
+theme_override_font_sizes/font_size = 75
+text = "EXIT"
+flat = true
+alignment = 0
+script = ExtResource("8_opp0e")
+
+[node name="SelectCan" type="TextureRect" parent="CanvasLayer"]
+offset_right = 69.0
+offset_bottom = 54.0
+script = ExtResource("9_bw3pr")
+
+[node name="CatCan" parent="CanvasLayer/SelectCan" instance=ExtResource("9_0ts57")]
+
+[node name="cat_anim" type="Area2D" parent="CanvasLayer"]
+
+[node name="cat" type="AnimatedSprite2D" parent="CanvasLayer/cat_anim"]
+position = Vector2(968, 709)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_by56b")
+animation = &"decision"
+flip_h = true
+
+[node name="tail" type="AnimatedSprite2D" parent="CanvasLayer/cat_anim/cat"]
+position = Vector2(201.429, -168.571)
+sprite_frames = SubResource("SpriteFrames_qxalw")
+flip_h = true
+
+[connection signal="focus_entered" from="CanvasLayer/SelectButtonBOX/StartButton" to="CanvasLayer/SelectButtonBOX/StartButton" method="_on_start_button_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/SelectButtonBOX/StartButton" to="CanvasLayer/SelectButtonBOX/StartButton" method="_on_start_button_focus_exited"]
+[connection signal="pressed" from="CanvasLayer/SelectButtonBOX/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/SelectButtonBOX/TutorialButton" to="CanvasLayer/SelectButtonBOX/TutorialButton" method="_on_tutorial_button_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/SelectButtonBOX/TutorialButton" to="CanvasLayer/SelectButtonBOX/TutorialButton" method="_on_tutorial_button_focus_exited"]
+[connection signal="focus_entered" from="CanvasLayer/SelectButtonBOX/OptionButton" to="CanvasLayer/SelectButtonBOX/OptionButton" method="_on_option_button_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/SelectButtonBOX/OptionButton" to="CanvasLayer/SelectButtonBOX/OptionButton" method="_on_option_button_focus_exited"]
+[connection signal="focus_entered" from="CanvasLayer/SelectButtonBOX/ExitButton" to="CanvasLayer/SelectButtonBOX/ExitButton" method="_on_exit_button_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/SelectButtonBOX/ExitButton" to="CanvasLayer/SelectButtonBOX/ExitButton" method="_on_exit_button_focus_exited"]
