@@ -24,6 +24,9 @@ func show_game_over():
 		show_message(str(My_Global.my_score)+"\nnya-n...\n(やる気が無くなった)")
 	await $MessageTimer.timeout
 	
+	
+	get_tree().change_scene_to_file("res://Scenes/title.tscn")
+	
 	$Message.text = "ボタンをクリックして \nスタート！"
 	$Message.show()
 	await get_tree().create_timer(1.0).timeout
