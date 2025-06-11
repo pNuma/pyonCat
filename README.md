@@ -21,5 +21,5 @@ https://godotengine.org/license/
 - ノスタルドット（M+） <br>
 https://logotype.jp/nosutaru-dot.html
 
-- あかずきんポップ
+- あかずきんポップ <br>
 https://flopdesign.booth.pm/items/1748058
