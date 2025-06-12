@@ -1,9 +1,5 @@
 extends Button
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 #StartButtonがフォーカスされたとき
 func _on_start_button_focus_entered():
 	My_Global.can_pos = self.global_position

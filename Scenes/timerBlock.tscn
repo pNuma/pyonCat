@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlewg7073gbsh"]
 
-[ext_resource type="Script" path="res://Scripts/timerBlock.gd" id="1_h2gpj"]
+[ext_resource type="Script" uid="uid://c3vg714xcc5kh" path="res://Scripts/timerBlock.gd" id="1_h2gpj"]
 [ext_resource type="Texture2D" uid="uid://oy1qs2nsnxnw" path="res://Sprites/timerBlock.png" id="2_rppjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52tgo"]

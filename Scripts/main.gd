@@ -12,7 +12,7 @@ var ele_temp = 0
 
 
 func _ready():
-	My_Global._is_gameover = true
+	My_Global.is_gameover = true
 	randomize()
 	adjust_camera()
 	$TileMap.hide()
@@ -25,7 +25,7 @@ func _process(_delta):
 		My_Global.my_score = 0
 	camera.global_position = player.global_position
 	
-	if !My_Global._is_gameover:
+	if !My_Global.is_gameover:
 	#標高のスコア計算
 		elevation = abs(int(player.position.y)-int($InitPosition.position.y))/10
 		
@@ -55,7 +55,7 @@ func _on_StartTimer_timeout():
 	$EnemyTimer.start()
 	
 func game_over():
-	My_Global._is_gameover = true
+	My_Global.is_gameover = true
 	if My_Global.high_score < My_Global.my_score:
 		My_Global.high_score = My_Global.my_score
 	$RemainTimer.stop()
@@ -69,8 +69,8 @@ func game_over():
 
 func new_game():
 	My_Global.remain_time = 100
-	My_Global._is_gameover = false
-	My_Global._is_gameclear=false
+	My_Global.is_gameover = false
+	My_Global.is_gameclear=false
 	My_Global.my_score=0
 	ele_temp = 0
 	$Player.position=$StartPosition.position
@@ -86,9 +86,9 @@ func _on_remain_timer_timeout():
 		My_Global.remain_time -= 1
 	$HUD.update_remain_time()
 	if My_Global.remain_time <= 0:
-		if !My_Global._is_gameover:
+		if !My_Global.is_gameover:
 			game_over()
-			My_Global._is_gameover = true
+			My_Global.is_gameover = true
 
 func _on_enemy_timer_timeout():
 	# Create a new instance
@@ -101,6 +101,5 @@ func _on_enemy_timer_timeout():
 func _on_cat_can_goal():
 	$RemainTimer.stop()
 	My_Global.my_score+=My_Global.remain_time*10
-	My_Global._is_gameclear=true
+	My_Global.is_gameclear=true
 	game_over()
-

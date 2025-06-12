@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://ba8ns67se76hv"]
 
 [ext_resource type="Texture2D" uid="uid://k2db3rgrg06s" path="res://Sprites/enemy_fish.png" id="1_heevt"]
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_yjyn5"]
+[ext_resource type="Script" uid="uid://c3umnocu3asqc" path="res://Scripts/enemy.gd" id="1_yjyn5"]
 [ext_resource type="Texture2D" uid="uid://c477h3pbt2q4x" path="res://Sprites/minusScore.png" id="2_y3e1e"]
 [ext_resource type="Texture2D" uid="uid://durjvlrfiliy4" path="res://Sprites/fish.png" id="3_hg0p3"]
 [ext_resource type="Texture2D" uid="uid://yab24equo8lj" path="res://Sprites/plusScore.png" id="3_wwrkj"]

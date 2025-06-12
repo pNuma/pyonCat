@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6r5gtw4mg8v3"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_xkg87"]
+[ext_resource type="Script" uid="uid://b42482f4ikls0" path="res://Scripts/main.gd" id="1_xkg87"]
 [ext_resource type="TileSet" uid="uid://3vwvmv8e6xi3" path="res://Tilemap/tile_set64.tres" id="2_aw3qt"]
 [ext_resource type="PackedScene" uid="uid://burduwj7bfoqj" path="res://Scenes/player.tscn" id="2_c4jug"]
 [ext_resource type="PackedScene" uid="uid://dlewg7073gbsh" path="res://Scenes/timerBlock.tscn" id="4_osxxy"]
@@ -146,7 +146,7 @@ z_index = -5
 position = Vector2(252, -353)
 
 [node name="CatCan" parent="." instance=ExtResource("9_u6odk")]
-position = Vector2(-132, -5237)
+position = Vector2(-127, -5224)
 
 [connection signal="timeout" from="RemainTimer" to="." method="_on_remain_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

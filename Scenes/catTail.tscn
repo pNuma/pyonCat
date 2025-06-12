@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://br6li2hw53qt5"]
 
-[ext_resource type="Script" path="res://Scripts/catTail.gd" id="1_e4dcp"]
+[ext_resource type="Script" uid="uid://bmoqrb0s35fc7" path="res://Scripts/catTail.gd" id="1_e4dcp"]
 [ext_resource type="Texture2D" uid="uid://d3jt3o1okomf6" path="res://Sprites/Player_tail1.png" id="2_s3yut"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pdvma"]

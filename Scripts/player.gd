@@ -65,4 +65,3 @@ func _process(delta: float) -> void:
 		elif _is_jumping:
 			$AnimatedSprite2D.animation = "jump"
 			
-

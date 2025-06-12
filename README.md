@@ -18,8 +18,5 @@ Godot公式のチュートリアルをかなり参考にしています。 <br>
 https://godotengine.org/license/
  
 ## 使用フォント
-- ノスタルドット（M+） <br>
+ノスタルドット（M+） <br>
 https://logotype.jp/nosutaru-dot.html
-
-- あかずきんポップ <br>
-https://flopdesign.booth.pm/items/1748058

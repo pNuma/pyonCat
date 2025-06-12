@@ -42,4 +42,3 @@ func _on_area_2d_body_entered(body):
 	_is_destroy = true
 	await get_tree().create_timer(1.0).timeout
 	queue_free()
-

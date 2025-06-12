@@ -10,7 +10,7 @@ func _ready():
 	wait_time = count_time	
 
 
-func _process(delta):
+func _process(_delta):
 	#アニメーション処理(汚すぎ)
 	if wait_time <= -6:
 		setTimerBlock()
@@ -36,4 +36,3 @@ func _on_floor_col_body_entered(_body):
 	
 func _on_CountTimer_timeout():
 	wait_time -= 1
-

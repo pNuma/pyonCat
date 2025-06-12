@@ -27,6 +27,3 @@ func _physics_process(delta):
 		rotation_speed*=-1
 		if rotation_speed > 0:
 			rotation_speed -= 10
-
-
-
