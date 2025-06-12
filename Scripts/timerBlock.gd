@@ -10,7 +10,7 @@ func _ready():
 	wait_time = count_time	
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	#アニメーション処理(汚すぎ)
 	if wait_time <= -6:
 		setTimerBlock()

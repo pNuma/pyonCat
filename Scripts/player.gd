@@ -14,7 +14,7 @@ var _is_directon_left = false # 左向きかどうか.
 func  _ready():
 	$AnimatedSprite2D.play()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# 重力を加算
 	velocity.y += GRAVITY
 	
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		_is_jumping = true # ジャンプ中.
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# アニメーションの切り替え.
 	if velocity.x < 0:
 		_is_directon_left = true # 左向き

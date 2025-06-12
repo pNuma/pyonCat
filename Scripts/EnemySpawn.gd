@@ -11,7 +11,7 @@ func _ready():
 	# 敵のインスタンスを作成します。
 	enemy_instance = enemy_scene.instantiate()
 
-func _process(delta):
+func _process(_delta: float) -> void:
 	if should_spawn_enemy():
 		spawn_enemy()
 
@@ -55,4 +55,3 @@ func _on_EnemyTimer_timeout():
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
-

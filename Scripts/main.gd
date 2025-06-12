@@ -12,15 +12,17 @@ var ele_temp = 0
 
 
 func _ready():
-	My_Global.is_gameover = true
+	My_Global.is_gameover = true	
+	My_Global.my_score=0
 	randomize()
 	adjust_camera()
 	$TileMap.hide()
 	$Node2D.hide()
 	$Player.hide()
 	$Player.position=$InitPosition.position
+	start_game_sequence()
 	
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if My_Global.my_score < 0:
 		My_Global.my_score = 0
 	camera.global_position = player.global_position
@@ -45,7 +47,7 @@ func adjust_camera():
 	camera.limit_smoothed = true
 	
 func player_hit():
-	$HUD.show_yaruki_minas()
+	$HUD.show_yaruki_minus()
 	
 func tail_hit():
 	$HUD.show_yaruki_plus()
@@ -70,8 +72,7 @@ func game_over():
 func new_game():
 	My_Global.remain_time = 100
 	My_Global.is_gameover = false
-	My_Global.is_gameclear=false
-	My_Global.my_score=0
+	My_Global.is_gameclear = false
 	ele_temp = 0
 	$Player.position=$StartPosition.position
 	$Player/catTail.rotation_speed = 250
@@ -79,13 +80,26 @@ func new_game():
 	$Node2D.show()
 	$Player.show()
 	$StartTimer.start()
+
+func start_game_sequence() -> void:
+	$HUD.show_message("3")
+	await get_tree().create_timer(1.0).timeout
+	$HUD.show_message("2")
+	await get_tree().create_timer(1.0).timeout
+	$HUD.show_message("1")
+	await get_tree().create_timer(1.0).timeout
+	
+	$HUD/ScreenCover.hide()
 	$HUD.show_message("のぼれ！")
+	
+	new_game()
 
 func _on_remain_timer_timeout():
 	if My_Global.remain_time > 0:
 		My_Global.remain_time -= 1
 	$HUD.update_remain_time()
 	if My_Global.remain_time <= 0:
+		My_Global.remain_time = 0
 		if !My_Global.is_gameover:
 			game_over()
 			My_Global.is_gameover = true

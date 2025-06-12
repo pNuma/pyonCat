@@ -5,7 +5,7 @@ signal goal
 func _ready():
 	$AnimatedSprite2D.play()
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	$AnimatedSprite2D.stop()
 	if !My_Global.is_gameclear:
 		My_Global.my_score += 5000

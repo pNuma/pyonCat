@@ -13,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta: float) -> void:
 		lifespan-=delta
 		if lifespan <= 0:
 			queue_free()
@@ -27,7 +27,10 @@ func _on_area_2d_body_entered(body):
 	if !_is_destroy:
 		if body.name == "Player":
 			My_Global.my_score-=50
-			My_Global.remain_time -= 5
+			if My_Global.remain_time <= 5:
+				My_Global.remain_time = 0
+			else:
+				My_Global.remain_time -= 5
 			$AnimatedSprite2D.animation = "P_destroy"
 			phit.emit()
 	

@@ -146,10 +146,9 @@ z_index = -5
 position = Vector2(252, -353)
 
 [node name="CatCan" parent="." instance=ExtResource("9_u6odk")]
-position = Vector2(-127, -5224)
+position = Vector2(-128, -5221)
 
 [connection signal="timeout" from="RemainTimer" to="." method="_on_remain_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="goal" from="CatCan" to="." method="_on_cat_can_goal"]
