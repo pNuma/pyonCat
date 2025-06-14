@@ -8,6 +8,7 @@ func _ready():
 func _on_body_entered(_body):
 	$AnimatedSprite2D.stop()
 	if !My_Global.is_gameclear:
+		AudioManager.play_se(AudioManager.canGet_sound)
 		My_Global.my_score += 5000
 		goal.emit()
 	else:

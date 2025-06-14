@@ -12,6 +12,7 @@ var ele_temp = 0
 
 
 func _ready():
+	#AudioManager.play_bgm(AudioManager.title_music)
 	My_Global.is_gameover = true	
 	My_Global.my_score=0
 	randomize()
@@ -83,10 +84,13 @@ func new_game():
 
 func start_game_sequence() -> void:
 	$HUD.show_message("3")
+	AudioManager.play_se(AudioManager.countDown_sound)
 	await get_tree().create_timer(1.0).timeout
 	$HUD.show_message("2")
+	AudioManager.play_se(AudioManager.countDown_sound)
 	await get_tree().create_timer(1.0).timeout
 	$HUD.show_message("1")
+	AudioManager.play_se(AudioManager.countDown_sound)
 	await get_tree().create_timer(1.0).timeout
 	
 	$HUD/ScreenCover.hide()

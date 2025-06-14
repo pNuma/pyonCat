@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://mtmxk2jxqjo0"]
 
-[ext_resource type="Script" uid="uid://1l3rajejo4np" path="res://Scenes/title.gd" id="1_h1jw8"]
+[ext_resource type="Script" uid="uid://1l3rajejo4np" path="res://Scripts/title.gd" id="1_h1jw8"]
 [ext_resource type="Texture2D" uid="uid://bcecab5xx41ok" path="res://Sprites/titleロゴ.png" id="1_pwxag"]
 [ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="2_ufxmt"]
-[ext_resource type="Script" uid="uid://dkbcbied7ubrl" path="res://Scenes/SelectButtonBOX.gd" id="3_0qswp"]
-[ext_resource type="Script" uid="uid://cmewjargkmmnj" path="res://Scenes/StartButton.gd" id="3_j21ji"]
+[ext_resource type="Script" uid="uid://dkbcbied7ubrl" path="res://Scripts/SelectButtonBOX.gd" id="3_0qswp"]
+[ext_resource type="Script" uid="uid://cmewjargkmmnj" path="res://Scripts/StartButton.gd" id="3_j21ji"]
 [ext_resource type="Texture2D" uid="uid://bp3uywby2pm8p" path="res://Sprites/hukudasi.png" id="3_lv7gn"]
-[ext_resource type="Script" uid="uid://bwb7jbxxo5lfo" path="res://Scenes/TutorialButton.gd" id="6_x40kn"]
-[ext_resource type="Script" uid="uid://bcm58w5n5gdc3" path="res://Scenes/OptionButton.gd" id="7_60rds"]
-[ext_resource type="Script" uid="uid://cufm84cadnfh1" path="res://Scenes/ExitButton.gd" id="8_opp0e"]
+[ext_resource type="Script" uid="uid://bwb7jbxxo5lfo" path="res://TutorialButton.gd" id="6_x40kn"]
+[ext_resource type="Script" uid="uid://bcm58w5n5gdc3" path="res://Scripts/OptionButton.gd" id="7_60rds"]
+[ext_resource type="Script" uid="uid://cufm84cadnfh1" path="res://Scripts/ExitButton.gd" id="8_opp0e"]
 [ext_resource type="PackedScene" uid="uid://ermkwt1sn0hx" path="res://Scenes/cat_can.tscn" id="9_0ts57"]
-[ext_resource type="Script" uid="uid://cuhy0sqtuxtrp" path="res://Scenes/SelectCan.gd" id="9_bw3pr"]
+[ext_resource type="Script" uid="uid://cuhy0sqtuxtrp" path="res://Scripts/SelectCan.gd" id="9_bw3pr"]
 [ext_resource type="Texture2D" uid="uid://nhms2vtbsbkw" path="res://Sprites/Player_jump1.png" id="11_5vvv3"]
 [ext_resource type="Texture2D" uid="uid://42dr71rfjt8m" path="res://Sprites/Player_walk1.png" id="12_5qknn"]
 [ext_resource type="Texture2D" uid="uid://d3jt3o1okomf6" path="res://Sprites/Player_tail1.png" id="14_qo7yj"]
@@ -94,6 +94,7 @@ offset_bottom = 613.0
 texture = ExtResource("3_lv7gn")
 
 [node name="HighScoreLabel" type="Label" parent="CanvasLayer/HighScoreLabelBg"]
+layout_mode = 0
 offset_left = 59.0
 offset_top = 53.0
 offset_right = 284.0
@@ -103,6 +104,7 @@ theme_override_font_sizes/font_size = 40
 text = "HighScore"
 
 [node name="HighScore" type="Label" parent="CanvasLayer/HighScoreLabelBg/HighScoreLabel"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 43.0
 offset_right = 175.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bis2250jghis7"]
+
+[ext_resource type="Script" uid="uid://bswlo0ef6ne54" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_sm2tf")
+
+[node name="BgmPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="SePlayer" type="AudioStreamPlayer2D" parent="."]

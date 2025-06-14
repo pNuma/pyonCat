@@ -2,6 +2,7 @@
 .godot/
 /[Ff]onts/
 /[Ss]prites
+/[Ss]ounds
 # Godot-specific ignores
 .import/
 export.cfg
