@@ -4,7 +4,10 @@ Godot Engineで初めて作成したゲーム <br>
 ジャンプを駆使して頂上を目指して登る2Dアクションゲームです。 <br>
 <br>
 Godot公式のチュートリアルをかなり参考にしています。 <br>
-→https://docs.godotengine.org/ja/4.x/getting_started/first_2d_game/index.html <br>
+⇒https://docs.godotengine.org/ja/4.x/getting_started/first_2d_game/index.html <br>
+
+効果音はjfxrで作成(?)しました。<br>
+⇒https://jfxr.frozenfractal.com/
 
 上から降ってくる敵のスプライトは友人に描いてもらいました。
 
@@ -14,9 +17,12 @@ Godot公式のチュートリアルをかなり参考にしています。 <br>
 
 ## 環境 <br>
 - windows11 pro <br>
-- Godot 4.1.1 <br>
+- Godot 4.4.1 <br>
 https://godotengine.org/license/
  
 ## 使用フォント
-ノスタルドット（M+） <br>
+- ノスタルドット（M+） <br>
 https://logotype.jp/nosutaru-dot.html
+
+- あかずきんポップ <br>
+https://flopdesign.booth.pm/items/1748058
