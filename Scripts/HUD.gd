@@ -38,13 +38,11 @@ func update_remain_time():
 	
 func show_yaruki_plus():
 	$YarukiPlus.show()
-	AudioManager.play_se(AudioManager.scoreUp_sound)
 	await get_tree().create_timer(1.0).timeout
 	$YarukiPlus.hide()	
 
 func show_yaruki_minus():
 	$YarukiMinus.show()
-	AudioManager.play_se(AudioManager.scoreDown_sound)
 	await get_tree().create_timer(1.0).timeout
 	$YarukiMinus.hide()
 	

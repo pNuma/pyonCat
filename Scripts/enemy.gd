@@ -1,47 +1,50 @@
 extends RigidBody2D
 
-var lifespan = 4
-var _is_destroy = false
-
 signal phit
 signal thit
+
+var _is_destroy = false
 
 func _ready():
 	$AnimatedSprite2D.play()
 	var mob_types = ["default","fish", "green_onion", "human", "oct"]
 	$AnimatedSprite2D.animation = mob_types.pick_random()
+	
+	# 下向きの速度を設定
+	linear_velocity.y = 500
+	# 寿命タイマーを開始
+	$LifespanTimer.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-		lifespan-=delta
-		if lifespan <= 0:
-			queue_free()
-		
-		if !_is_destroy:
-			position.y += 5
-		else :
-			pass
 
 func _on_area_2d_body_entered(body):
-	if !_is_destroy:
-		if body.name == "Player":
-			My_Global.my_score-=50
-			if My_Global.remain_time <= 5:
-				My_Global.remain_time = 0
-			else:
-				My_Global.remain_time -= 5
-			$AnimatedSprite2D.animation = "P_destroy"
-			phit.emit()
-	
-		elif body.name == "catTail":
-			My_Global.my_score+=100
-			My_Global.remain_time += 5
-			$AnimatedSprite2D.animation = "T_destroy"
-			thit.emit()
-	elif _is_destroy:
-		pass
+	if _is_destroy:
+		return # すでに破壊処理中なら、何もしない
+
+	if body.is_in_group("player"):
+		_is_destroy = true # 多重ヒットを防ぐ
+		linear_velocity.y = 0
+		My_Global.my_score -= 50
+		if My_Global.remain_time <= 5:
+			My_Global.remain_time = 0
+		else:
+			My_Global.remain_time -= 5
+		$AnimatedSprite2D.animation = "P_destroy"
+		phit.emit()
 		
-	_is_destroy = true
-	await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0).timeout
+		queue_free()
+		
+	elif body.is_in_group("player_tail"):
+		_is_destroy = true # 多重ヒットを防ぐ
+		linear_velocity.y = 0
+		My_Global.my_score += 100
+		My_Global.remain_time += 5
+		$AnimatedSprite2D.animation = "T_destroy"
+		thit.emit()
+		
+		await get_tree().create_timer(1.0).timeout
+		queue_free()
+
+
+func _on_lifespan_timer_timeout():
 	queue_free()

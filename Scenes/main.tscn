@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6r5gtw4mg8v3"]
+[gd_scene load_steps=10 format=3 uid="uid://c6r5gtw4mg8v3"]
 
 [ext_resource type="Script" uid="uid://b42482f4ikls0" path="res://Scripts/main.gd" id="1_xkg87"]
 [ext_resource type="TileSet" uid="uid://3vwvmv8e6xi3" path="res://Tilemap/tile_set64.tres" id="2_aw3qt"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dlewg7073gbsh" path="res://Scenes/timerBlock.tscn" id="4_osxxy"]
 [ext_resource type="PackedScene" uid="uid://ex0ybpxxhoru" path="res://Scenes/HUD.tscn" id="5_4043r"]
 [ext_resource type="PackedScene" uid="uid://bsp04pubukw18" path="res://Scenes/background.tscn" id="6_l7m51"]
+[ext_resource type="Script" uid="uid://dydsq2bnkk78d" path="res://Scripts/EnemySpawner.gd" id="8_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://ba8ns67se76hv" path="res://Scenes/enemy.tscn" id="9_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ermkwt1sn0hx" path="res://Scenes/cat_can.tscn" id="9_u6odk"]
 
 [node name="Main" type="Node2D"]
@@ -23,105 +25,105 @@ position = Vector2(-130, 935)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="TimerBlocks" type="Node2D" parent="."]
 
-[node name="TimerBlock" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(315, -2011)
 count_time = 1
 
-[node name="TimerBrock1" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBrock1" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(315, 806)
 count_time = 2
 
-[node name="TimerBlock2" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock2" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(251, 678)
 count_time = 3
 
-[node name="TimerBlock3" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock3" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, 102)
 count_time = 2
 
-[node name="TimerBlock4" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock4" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(59, 38)
 count_time = 2
 
-[node name="TimerBlock5" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock5" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(443, -2202)
 count_time = 2
 
-[node name="TimerBlock6" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock6" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(59, -2586)
 count_time = 3
 
-[node name="TimerBlock7" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock7" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(123, -3799)
 count_time = 1
 
-[node name="TimerBlock8" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock8" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(315, -3674)
 count_time = 2
 
-[node name="TimerBlock9" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock9" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(122, -4826)
 count_time = 1
 
-[node name="TimerBlock10" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock10" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -4954)
 count_time = 1
 
-[node name="TimerBlock11" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock11" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(379, -4954)
 count_time = 1
 
-[node name="TimerBlock12" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock12" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(59, -4506)
 count_time = 2
 
-[node name="TimerBlock13" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock13" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, -4442)
 count_time = 3
 
-[node name="TimerBlock14" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock14" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -4634)
 count_time = 2
 
-[node name="TimerBlock15" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock15" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(379, -3354)
 count_time = 3
 
-[node name="TimerBlock16" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock16" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -2074)
 count_time = 3
 
-[node name="TimerBlock17" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock17" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-133, -2138)
 count_time = 3
 
-[node name="TimerBlock18" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock18" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -2266)
 count_time = 2
 
-[node name="TimerBlock19" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock19" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-133, -2330)
 count_time = 1
 
-[node name="TimerBlock20" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock20" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-69, -922)
 count_time = 2
 
-[node name="TimerBlock21" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock21" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, -1114)
 count_time = 3
 
-[node name="TimerBlock22" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock22" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -1434)
 count_time = 3
 
-[node name="TimerBlock23" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock23" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, -1306)
 count_time = 3
 
-[node name="TimerBlock24" parent="Node2D" instance=ExtResource("4_osxxy")]
+[node name="TimerBlock24" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(315, -538)
 count_time = 3
 
@@ -133,12 +135,6 @@ position = Vector2(-130, 935)
 
 [node name="RemainTimer" type="Timer" parent="."]
 
-[node name="StartTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="EnemyTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="HUD" parent="." instance=ExtResource("5_4043r")]
 
 [node name="Background" parent="." instance=ExtResource("6_l7m51")]
@@ -148,7 +144,14 @@ position = Vector2(252, -353)
 [node name="CatCan" parent="." instance=ExtResource("9_u6odk")]
 position = Vector2(-128, -5221)
 
+[node name="EnemySpawner" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("8_ynf5e")
+enemy_scene = ExtResource("9_hptm8")
+player = NodePath("../Player")
+
+[node name="EnemyTimer" type="Timer" parent="EnemySpawner"]
+wait_time = 2.0
+
 [connection signal="timeout" from="RemainTimer" to="." method="_on_remain_timer_timeout"]
-[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
-[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="goal" from="CatCan" to="." method="_on_cat_can_goal"]
+[connection signal="timeout" from="EnemySpawner/EnemyTimer" to="EnemySpawner" method="_on_enemy_timer_timeout"]

@@ -15,33 +15,34 @@ func  _ready():
 	$AnimatedSprite2D.play()
 
 func _physics_process(_delta: float) -> void:
-	# 重力を加算
-	velocity.y += GRAVITY
-	
-	# 移動量を減衰.
-	velocity.x *= DECAY_MOVE_SPEED
-	
-	# 左右移動.
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= MOVE_SPEED # 左方向に移動
-	elif Input.is_action_pressed("ui_right"):
-		velocity.x += MOVE_SPEED # 右方向に移動.
-	
-	# ジャンプ.
-	if _is_jumping == false:
-		# ジャンプ中でなければジャンプできる.
-		if Input.is_action_just_pressed("ui_accept"):
-			# SPACEキーでジャンプする.
-			AudioManager.play_se(AudioManager.jump_sound)
-			velocity.y = -JUMP_POWER
-	
-	# 移動処理.
-	move_and_slide()
-	
-	if is_on_floor():
-		_is_jumping = false # 床に着地している
-	else:
-		_is_jumping = true # ジャンプ中.
+	if !My_Global.is_gameover:
+		# 重力を加算
+		velocity.y += GRAVITY
+		
+		# 移動量を減衰.
+		velocity.x *= DECAY_MOVE_SPEED
+		
+		# 左右移動.
+		if Input.is_action_pressed("ui_left"):
+			velocity.x -= MOVE_SPEED # 左方向に移動
+		elif Input.is_action_pressed("ui_right"):
+			velocity.x += MOVE_SPEED # 右方向に移動.
+		
+		# ジャンプ.
+		if _is_jumping == false:
+			# ジャンプ中でなければジャンプできる.
+			if Input.is_action_just_pressed("ui_accept"):
+				# SPACEキーでジャンプする.
+				AudioManager.play_se(AudioManager.jump_sound)
+				velocity.y = -JUMP_POWER
+		
+		# 移動処理.
+		move_and_slide()
+		
+		if is_on_floor():
+			_is_jumping = false # 床に着地している
+		else:
+			_is_jumping = true # ジャンプ中.
 
 func _process(_delta: float) -> void:
 	# アニメーションの切り替え.
