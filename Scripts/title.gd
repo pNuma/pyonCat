@@ -1,11 +1,27 @@
 extends Control
 
+@onready var start_button = $CanvasLayer/SelectButtonBOX/StartButton
+@onready var tutorial_button = $CanvasLayer/SelectButtonBOX/TutorialButton
+@onready var options_button = $CanvasLayer/SelectButtonBOX/OptionButton
+@onready var exit_button = $CanvasLayer/SelectButtonBOX/ExitButton
+@onready var cursor = $CanvasLayer/SelectCan 
+
 func _ready():
 	#AudioManager.play_bgm(AudioManager.title_music)
+	start_button.focused.connect(_on_button_focused)
+	tutorial_button.focused.connect(_on_button_focused)
+	options_button.focused.connect(_on_button_focused)
+	exit_button.focused.connect(_on_button_focused)
 	$CanvasLayer/cat_anim/cat.animation = "default"
 	update_highscore_display()
+	
+	cursor.move_to_target_instantly(start_button)
+	start_button.grab_focus()
 
-# どのUI要素にも処理されなかった入力が、最後にこの関数に届きます
+func _on_button_focused(button_node):
+	My_Global.current_select = button_node.select_id
+	cursor.move_to_target_with_tween(button_node)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		get_viewport().set_input_as_handled()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://mtmxk2jxqjo0"]
+[gd_scene load_steps=13 format=3 uid="uid://mtmxk2jxqjo0"]
 
 [ext_resource type="Script" uid="uid://1l3rajejo4np" path="res://Scripts/title.gd" id="1_h1jw8"]
 [ext_resource type="Texture2D" uid="uid://bcecab5xx41ok" path="res://Sprites/titleロゴ.png" id="1_pwxag"]
 [ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="2_ufxmt"]
-[ext_resource type="Script" uid="uid://dkbcbied7ubrl" path="res://Scripts/SelectButtonBOX.gd" id="3_0qswp"]
 [ext_resource type="Texture2D" uid="uid://bp3uywby2pm8p" path="res://Sprites/hukudasi.png" id="3_lv7gn"]
 [ext_resource type="Script" uid="uid://dp1katu051m0q" path="res://Scripts/TitleButton.gd" id="6_cwqts"]
 [ext_resource type="PackedScene" uid="uid://ermkwt1sn0hx" path="res://Scenes/cat_can.tscn" id="9_0ts57"]
@@ -126,7 +125,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("3_0qswp")
 
 [node name="StartButton" type="Button" parent="CanvasLayer/SelectButtonBOX"]
 layout_mode = 2
