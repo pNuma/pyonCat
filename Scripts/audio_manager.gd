@@ -2,10 +2,7 @@ extends Node
 
 # ノードへの参照を準備
 @onready var bgm_player: AudioStreamPlayer2D = $BgmPlayer
-#@onready var se_player: AudioStreamPlayer2D = $SePlayer
-
-# 事前にサウンドファイルを読み込んでおく
-
+@onready var se_player: AudioStreamPlayer2D = $SePlayer
 
 var jump_sound = preload("res://Sounds/jump.wav")
 var scoreUp_sound = preload("res://Sounds/scoreup.wav")

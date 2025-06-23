@@ -10,9 +10,7 @@ func _ready():
 	var mob_types = ["default","fish", "green_onion", "human", "oct"]
 	$AnimatedSprite2D.animation = mob_types.pick_random()
 	
-	# 下向きの速度を設定
 	linear_velocity.y = 500
-	# 寿命タイマーを開始
 	$LifespanTimer.start()
 
 
@@ -27,7 +25,7 @@ func _on_area_2d_body_entered(body):
 		if My_Global.remain_time <= 5:
 			My_Global.remain_time = 0
 		else:
-			My_Global.remain_time -= 5
+			My_Global.remain_time -= 3
 		$AnimatedSprite2D.animation = "P_destroy"
 		phit.emit()
 		
@@ -38,7 +36,7 @@ func _on_area_2d_body_entered(body):
 		_is_destroy = true # 多重ヒットを防ぐ
 		linear_velocity.y = 0
 		My_Global.my_score += 100
-		My_Global.remain_time += 5
+		My_Global.remain_time += 1
 		$AnimatedSprite2D.animation = "T_destroy"
 		thit.emit()
 		

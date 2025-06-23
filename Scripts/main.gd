@@ -70,7 +70,6 @@ func new_game():
 	My_Global.is_gameclear=false
 	ele_temp = 0
 	$Player.position=$StartPosition.position
-	$Player/catTail.rotation_speed = 250
 	$TileMap.show()
 	$TimerBlocks.show()
 	$Player.show()
@@ -109,7 +108,7 @@ func _on_cat_can_goal():
 
 	AudioManager.play_se(AudioManager.canGet_sound) 
 	
-	My_Global.my_score += 5000
+	My_Global.my_score += 10000
 	My_Global.my_score+=My_Global.remain_time*10
 	My_Global.is_gameclear=true
 	game_over()

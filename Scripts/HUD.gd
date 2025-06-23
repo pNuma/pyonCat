@@ -1,13 +1,10 @@
 extends CanvasLayer
 
-#signal start_game
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$YarukiPlus.hide()
 	$YarukiMinus.hide()
 	$HighScore.text = str(My_Global.high_score) 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$Score.text=str(My_Global.my_score)
 
