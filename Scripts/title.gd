@@ -7,7 +7,7 @@ extends Control
 @onready var cursor = $CanvasLayer/SelectCan 
 
 func _ready():
-	#AudioManager.play_bgm(AudioManager.title_music)
+	AudioManager.play_bgm(AudioManager.title_music)
 	start_button.focused.connect(_on_button_focused)
 	tutorial_button.focused.connect(_on_button_focused)
 	options_button.focused.connect(_on_button_focused)

@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://q3ip75yd56ci"]
+
+[ext_resource type="Texture2D" uid="uid://ceyf3d1evhydy" path="res://Sprites/title_bg.png" id="1_hmytp"]
+[ext_resource type="FontFile" uid="uid://sybxf4qtu7fd" path="res://Fonts/AkazukinPOP2/AkazukiPOP.otf" id="2_tx2dh"]
+[ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_tx2dh"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1200.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.133333, 0.478431, 0.678431, 0.952941)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 36.0
+offset_right = 1101.0
+offset_bottom = 286.0
+texture = ExtResource("1_hmytp")
+
+[node name="TitleLabel" type="Label" parent="TextureRect"]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 981.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("2_tx2dh")
+theme_override_font_sizes/font_size = 120
+text = "ゲームせってい"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 483.5
+offset_top = 400.0
+offset_right = 716.5
+offset_bottom = 708.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BGMLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 75
+text = "BGM"
+
+[node name="BGMSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SELabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 75
+text = "SE"
+
+[node name="SESlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 75
+text = "もどる"
+flat = true

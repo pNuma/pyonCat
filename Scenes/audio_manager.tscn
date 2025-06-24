@@ -5,6 +5,8 @@
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_sm2tf")
 
-[node name="BgmPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="BgmPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
 
-[node name="SePlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="SePlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SE"

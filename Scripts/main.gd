@@ -50,6 +50,7 @@ func tail_hit():
 	$HUD.show_yaruki_plus()
 	
 func game_over():
+	AudioManager.stop_bgm()
 	My_Global.is_gameover = true
 	if My_Global.high_score < My_Global.my_score:
 		My_Global.high_score = My_Global.my_score
@@ -77,6 +78,7 @@ func new_game():
 	enemy_spawner.start() 
 
 func start_game_sequence() -> void:
+	AudioManager.stop_bgm()
 	$HUD.show_message("3")
 	AudioManager.play_se(AudioManager.countDown_sound)
 	await get_tree().create_timer(1.0).timeout
@@ -89,6 +91,7 @@ func start_game_sequence() -> void:
 	
 	$HUD/ScreenCover.hide()
 	$HUD.show_message("のぼれ！")
+	AudioManager.play_bgm(AudioManager.main_music)
 	
 	new_game()
 
@@ -105,7 +108,6 @@ func _on_cat_can_goal():
 	$RemainTimer.stop()
 	if My_Global.is_gameclear:
 		return # すでにクリア済みなら何もしない
-
 	AudioManager.play_se(AudioManager.canGet_sound) 
 	
 	My_Global.my_score += 10000
