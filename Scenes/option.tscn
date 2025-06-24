@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://q3ip75yd56ci"]
+[gd_scene load_steps=5 format=3 uid="uid://q3ip75yd56ci"]
 
 [ext_resource type="Texture2D" uid="uid://ceyf3d1evhydy" path="res://Sprites/title_bg.png" id="1_hmytp"]
+[ext_resource type="Script" uid="uid://o0ju57m4gqtq" path="res://Scripts/option.gd" id="1_oh5tq"]
 [ext_resource type="FontFile" uid="uid://sybxf4qtu7fd" path="res://Fonts/AkazukinPOP2/AkazukiPOP.otf" id="2_tx2dh"]
 [ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_tx2dh"]
 
-[node name="Node2D" type="Control"]
+[node name="option" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_oh5tq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
@@ -61,6 +63,8 @@ text = "BGM"
 
 [node name="BGMSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="SELabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -70,6 +74,8 @@ text = "SE"
 
 [node name="SESlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -77,3 +83,7 @@ theme_override_fonts/font = ExtResource("3_tx2dh")
 theme_override_font_sizes/font_size = 75
 text = "もどる"
 flat = true
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SESlider" to="." method="_on_se_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

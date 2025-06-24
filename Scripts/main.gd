@@ -54,7 +54,7 @@ func game_over():
 	My_Global.is_gameover = true
 	if My_Global.high_score < My_Global.my_score:
 		My_Global.high_score = My_Global.my_score
-		#My_Global.save_data() # セーブ処理
+		My_Global.save_data() # セーブ処理
 		
 	$RemainTimer.stop()
 	enemy_spawner.stop() 

@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6r5gtw4mg8v3"]
+[gd_scene load_steps=12 format=3 uid="uid://c6r5gtw4mg8v3"]
 
 [ext_resource type="Script" uid="uid://b42482f4ikls0" path="res://Scripts/main.gd" id="1_xkg87"]
 [ext_resource type="TileSet" uid="uid://3vwvmv8e6xi3" path="res://Tilemap/tile_set64.tres" id="2_aw3qt"]
 [ext_resource type="PackedScene" uid="uid://burduwj7bfoqj" path="res://Scenes/player.tscn" id="2_c4jug"]
 [ext_resource type="PackedScene" uid="uid://dlewg7073gbsh" path="res://Scenes/timerBlock.tscn" id="4_osxxy"]
 [ext_resource type="PackedScene" uid="uid://ex0ybpxxhoru" path="res://Scenes/HUD.tscn" id="5_4043r"]
-[ext_resource type="PackedScene" uid="uid://bsp04pubukw18" path="res://Scenes/background.tscn" id="6_l7m51"]
 [ext_resource type="Script" uid="uid://dydsq2bnkk78d" path="res://Scripts/EnemySpawner.gd" id="8_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://ba6on5g7qhqhw" path="res://Sprites/background.png" id="9_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://ba8ns67se76hv" path="res://Scenes/enemy.tscn" id="9_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ermkwt1sn0hx" path="res://Scenes/cat_can.tscn" id="9_u6odk"]
+[ext_resource type="Texture2D" uid="uid://c065hscxs1837" path="res://Sprites/mountain_bg.png" id="10_6iyac"]
+[ext_resource type="Texture2D" uid="uid://sbfryquegrmb" path="res://Sprites/night_sky_bg.png" id="11_fdnlq"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xkg87")
@@ -137,10 +139,6 @@ position = Vector2(-130, 935)
 
 [node name="HUD" parent="." instance=ExtResource("5_4043r")]
 
-[node name="Background" parent="." instance=ExtResource("6_l7m51")]
-z_index = -5
-position = Vector2(252, -353)
-
 [node name="CatCan" parent="." instance=ExtResource("9_u6odk")]
 position = Vector2(-128, -5221)
 
@@ -151,6 +149,34 @@ player = NodePath("../Player")
 
 [node name="EnemyTimer" type="Timer" parent="EnemySpawner"]
 wait_time = 0.8
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -2
+position = Vector2(280, -250)
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_left = -1646.0
+offset_top = -3322.0
+offset_right = 1278.0
+offset_bottom = -1193.0
+scale = Vector2(1.02, 0.96)
+texture = ExtResource("9_d1ilt")
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+offset_left = -1351.0
+offset_top = -1343.0
+offset_right = 1351.0
+offset_bottom = 468.0
+scale = Vector2(1, 1.56)
+texture = ExtResource("10_6iyac")
+
+[node name="TextureRect3" type="TextureRect" parent="Background"]
+offset_left = -1307.0
+offset_top = -5767.0
+offset_right = 1323.0
+offset_bottom = -3829.0
+scale = Vector2(1, 1.28)
+texture = ExtResource("11_fdnlq")
 
 [connection signal="timeout" from="RemainTimer" to="." method="_on_remain_timer_timeout"]
 [connection signal="goal" from="CatCan" to="." method="_on_cat_can_goal"]

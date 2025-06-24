@@ -17,15 +17,18 @@ var select_sound = preload("res://Sounds/select.wav")
 var decision_sound = preload("res://Sounds/decision.wav")
 
 
-# AudioManagerがロードされた時に一度だけ実行される
 func _ready() -> void:
-	# 保存されているオーディオ設定を起動時に適用する（設定画面実装時に有効化）
-	# apply_audio_settings()
-	pass
+	apply_audio_settings()
 
 
-# --- BGM制御関数 ---
-
+func apply_audio_settings() -> void:
+	var bgm_bus_idx = AudioServer.get_bus_index("BGM")
+	var se_bus_idx = AudioServer.get_bus_index("SE")
+	
+	AudioServer.set_bus_volume_db(bgm_bus_idx, linear_to_db(My_Global.volume_bgm))
+	AudioServer.set_bus_volume_db(se_bus_idx, linear_to_db(My_Global.volume_se))
+	
+	
 # BGMを再生する
 func play_bgm(music_file) -> void:
 	# もし現在再生中の曲と違う曲を再生しようとした場合
@@ -49,7 +52,7 @@ func play_se(sound_file) -> void:
 	# 使い捨てプレイヤーを生成して再生
 	var player = AudioStreamPlayer.new()
 	player.stream = sound_file
-	player.bus = "SFX" # SFXバスで再生するように指定
+	player.bus = "SE" 
 	player.finished.connect(player.queue_free)
 	add_child(player)
 	player.play()

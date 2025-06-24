@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				# ここにオプション画面を開く処理を書く
 			"OPTION":
 				print("OPTION")
-				# ここにオプション画面を開く処理を書く
+				get_tree().change_scene_to_file("res://Scenes/option.tscn")
 			"EXIT":
 				get_tree().quit()
 			_: # 上記のいずれでもない場合
