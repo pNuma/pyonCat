@@ -10,7 +10,7 @@ var main_music = preload("res://Sounds/main_BGM.ogg")
 
 var jump_sound = preload("res://Sounds/jump.wav")
 var scoreUp_sound = preload("res://Sounds/scoreup.wav")
-var scoreDown_sound = preload("res://Sounds/socoredown.wav")
+var scoreDown_sound = preload("res://Sounds/scoredown.wav")
 var canGet_sound = preload("res://Sounds/canGet.wav")
 var countDown_sound = preload("res://Sounds/countdown.wav")
 var select_sound = preload("res://Sounds/select.wav")
@@ -27,6 +27,8 @@ func apply_audio_settings() -> void:
 	
 	AudioServer.set_bus_volume_db(bgm_bus_idx, linear_to_db(My_Global.volume_bgm))
 	AudioServer.set_bus_volume_db(se_bus_idx, linear_to_db(My_Global.volume_se))
+	
+	AudioServer.set_bus_mute(0, My_Global.is_muted)
 	
 	
 # BGMを再生する

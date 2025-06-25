@@ -1,9 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://q3ip75yd56ci"]
+[gd_scene load_steps=10 format=3 uid="uid://q3ip75yd56ci"]
 
 [ext_resource type="Texture2D" uid="uid://ceyf3d1evhydy" path="res://Sprites/title_bg.png" id="1_hmytp"]
 [ext_resource type="Script" uid="uid://o0ju57m4gqtq" path="res://Scripts/option.gd" id="1_oh5tq"]
 [ext_resource type="FontFile" uid="uid://sybxf4qtu7fd" path="res://Fonts/AkazukinPOP2/AkazukiPOP.otf" id="2_tx2dh"]
 [ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_tx2dh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oh5tq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1u3x"]
+bg_color = Color(0.141176, 0.470588, 0.658824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82oph"]
+bg_color = Color(0.141176, 0.470588, 0.658824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_642wi"]
+bg_color = Color(0.164706, 0.478431, 0.768627, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khfqe"]
+bg_color = Color(0.141176, 0.470588, 0.658824, 1)
 
 [node name="option" type="Control"]
 layout_mode = 3
@@ -47,43 +80,255 @@ vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 483.5
-offset_top = 400.0
-offset_right = 716.5
-offset_bottom = 708.0
+offset_left = 206.0
+offset_top = 337.0
+offset_right = 1013.0
+offset_bottom = 917.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="BGMLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="SoundGroup" type="Control" parent="MarginContainer/VBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(0, 210)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_tx2dh")
-theme_override_font_sizes/font_size = 75
-text = "BGM"
+mouse_filter = 2
 
-[node name="BGMSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SoundGroup"]
 layout_mode = 2
+offset_left = 3.0
+offset_top = 49.0
+offset_right = 804.0
+offset_bottom = 205.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BGMLabel" type="Label" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 40
+text = "BGM "
+horizontal_alignment = 2
+
+[node name="BGMSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
 max_value = 1.0
 step = 0.01
 
-[node name="SELabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_tx2dh")
-theme_override_font_sizes/font_size = 75
-text = "SE"
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="SESlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="SELabel" type="Label" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 40
+text = "SE  "
+horizontal_alignment = 2
+
+[node name="SESlider" type="HSlider" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
+
+[node name="Spacer_1" type="Control" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="MuteCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 30
+flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 30
+text = "ミュート"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/SoundGroup"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh5tq")
+
+[node name="SoundSettingLabel" type="Label" parent="MarginContainer/VBoxContainer/SoundGroup"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = -22.0
+offset_right = 300.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_f1u3x")
+text = "【サウンド設定】"
+vertical_alignment = 1
+
+[node name="Spacer_2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="ScreenGroup" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/ScreenGroup"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1278, -263)
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh5tq")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScreenGroup"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -17.0
+offset_right = 652.0
+offset_bottom = 17.0
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScreenGroup/HBoxContainer4"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/ScreenGroup/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 30
+flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScreenGroup/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 30
+text = "フルスクリーン"
+
+[node name="ScreenSettingLabel" type="Label" parent="MarginContainer/VBoxContainer/ScreenGroup"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = -22.0
+offset_right = 230.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_82oph")
+text = "【画面設定】"
+vertical_alignment = 1
+
+[node name="Spacer_3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="DataGroup" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/VBoxContainer/DataGroup"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh5tq")
+
+[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer/DataGroup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -21.0
+offset_right = 154.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_642wi")
+text = "ハイスコアをリセット"
+
+[node name="DataSettingLabel" type="Label" parent="MarginContainer/VBoxContainer/DataGroup"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = -22.0
+offset_right = 265.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("3_tx2dh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_khfqe")
+text = "【データ管理】"
+vertical_alignment = 1
+
+[node name="Spacer_4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tx2dh")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 60
 text = "もどる"
 flat = true
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/SESlider" to="." method="_on_se_slider_value_changed"]
+[node name="ConfirmResetDialog" type="ConfirmationDialog" parent="."]
+title = "確認"
+size = Vector2i(291, 100)
+dialog_text = "ハイスコアをリセットします。よろしいですか？"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer2/SESlider" to="." method="_on_se_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer3/MuteCheckBox" to="." method="_on_mute_check_box_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/ScreenGroup/HBoxContainer4/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/DataGroup/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="confirmed" from="ConfirmResetDialog" to="." method="_on_confirm_reset_dialog_confirmed"]
