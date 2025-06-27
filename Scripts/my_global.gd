@@ -10,8 +10,10 @@ var remain_time: int = 100
 var current_select: String = "START" 
 
 
+
 # --- 保存対象 ---
 var high_score: int = 0
+var highscore_was_a_clear: bool = false
 var volume_bgm: float = 1.0
 var volume_se: float = 1.0
 var is_muted: bool = false 
@@ -31,6 +33,7 @@ func _ready() -> void:
 func save_data() -> void:
 	var save_dict = {
 		"high_score": high_score,
+		"highscore_was_a_clear": highscore_was_a_clear,
 		"volume_bgm": volume_bgm,
 		"volume_se": volume_se,
 		"is_muted": is_muted,
@@ -51,6 +54,8 @@ func load_data() -> void:
 			
 			if loaded_data.has("high_score"):
 				high_score = loaded_data["high_score"]
+			if loaded_data.has("highscore_was_a_clear"):
+				highscore_was_a_clear = loaded_data["highscore_was_a_clear"]
 			if loaded_data.has("volume_bgm"):
 				volume_bgm = loaded_data["volume_bgm"]
 			if loaded_data.has("volume_se"):
@@ -60,9 +65,15 @@ func load_data() -> void:
 			if loaded_data.has("is_fullscreen"):
 				is_fullscreen = loaded_data["is_fullscreen"]
 				
-# My_Global.gd に追加する関数
 
 func reset_highscore() -> void:
 	high_score = 0
+	highscore_was_a_clear = false
 	save_data()
 	print("ハイスコアがリセットされました。")
+	
+func get_formatted_highscore_string() -> String:
+	if highscore_was_a_clear:
+		return str(high_score)+"☆"
+	else:
+		return str(high_score)

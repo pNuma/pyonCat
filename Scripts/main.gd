@@ -44,7 +44,6 @@ func player_hit():
 	AudioManager.play_se(AudioManager.scoreDown_sound)
 	$HUD.show_yaruki_minus()
 	
-	
 func tail_hit():
 	AudioManager.play_se(AudioManager.scoreUp_sound)
 	$HUD.show_yaruki_plus()
@@ -54,6 +53,7 @@ func game_over():
 	My_Global.is_gameover = true
 	if My_Global.high_score < My_Global.my_score:
 		My_Global.high_score = My_Global.my_score
+		My_Global.highscore_was_a_clear = My_Global.is_gameclear
 		My_Global.save_data() # セーブ処理
 		
 	$RemainTimer.stop()
@@ -110,7 +110,7 @@ func _on_cat_can_goal():
 		return # すでにクリア済みなら何もしない
 	AudioManager.play_se(AudioManager.canGet_sound) 
 	
-	My_Global.my_score += 10000
+	My_Global.my_score += 3000
 	My_Global.my_score+=My_Global.remain_time*10
 	My_Global.is_gameclear=true
 	game_over()

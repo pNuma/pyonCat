@@ -45,5 +45,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	# ハイスコア表示を更新するための関数
 func update_highscore_display() -> void:
-	# My_Globalから現在のハイスコアを取得
-	$CanvasLayer/HighScoreLabelBg/HighScoreLabel/HighScore.text = str(My_Global.high_score)
+	$CanvasLayer/HighScoreLabelBg/HighScoreLabel/HighScore.text = My_Global.get_formatted_highscore_string()
