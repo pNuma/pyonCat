@@ -9,6 +9,7 @@ var title_music = preload("res://Sounds/title_BGM.ogg")
 var main_music = preload("res://Sounds/main_BGM.ogg")
 
 var jump_sound = preload("res://Sounds/jump.wav")
+var cannot_reverse_sound = preload("res://Sounds/cannot_reverse.wav")
 var scoreUp_sound = preload("res://Sounds/scoreup.wav")
 var scoreDown_sound = preload("res://Sounds/scoredown.wav")
 var canGet_sound = preload("res://Sounds/canGet.wav")

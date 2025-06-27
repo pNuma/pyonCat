@@ -29,3 +29,9 @@ sprite_frames = SubResource("SpriteFrames_pdvma")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 12)
 shape = SubResource("CapsuleShape2D_topcb")
+
+[node name="ReverseFailCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="ReverseFailCooldownTimer" to="." method="_on_reverse_fail_cooldown_time_timeout"]

@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var orbit_distance = 240.0
 
 var rotation_speed: float
+var can_play_fail_sound: bool = true #連打で音ならし対策
 
 func _ready():
 	rotation_speed = max_speed
@@ -15,10 +16,17 @@ func _physics_process(delta):
 	position = position.rotated(rotation_angle)
 
 	if Input.is_action_just_pressed("ui_up"):
-		var speed_value = abs(rotation_speed)
-		rotation_speed *= -1
-		
-		if rotation_speed > 0:
-			speed_value -= 10 # 減速処理
-			speed_value = max(speed_value, min_speed)
-			rotation_speed = speed_value
+		if abs(rotation_speed) > min_speed:
+			var new_speed = abs(rotation_speed) - 10 # 減速処理
+			new_speed = max(new_speed, min_speed)
+			rotation_speed = -sign(rotation_speed) * new_speed #反転
+			
+		else:
+			if can_play_fail_sound:
+				can_play_fail_sound = false
+				$ReverseFailCooldownTimer.start()
+				AudioManager.play_se(AudioManager.cannot_reverse_sound)
+
+# 再生許可フラグ
+func _on_reverse_fail_cooldown_time_timeout() -> void:
+	can_play_fail_sound = true

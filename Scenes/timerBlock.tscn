@@ -10,6 +10,7 @@ size = Vector2(64, 64)
 size = Vector2(64, 13)
 
 [node name="TimerBlock" type="StaticBody2D"]
+z_index = -1
 collision_layer = 4
 script = ExtResource("1_h2gpj")
 
