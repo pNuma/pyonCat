@@ -7,7 +7,7 @@
 size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2gpi"]
-size = Vector2(64, 13)
+size = Vector2(62, 13)
 
 [node name="TimerBlock" type="StaticBody2D"]
 z_index = -1
@@ -17,9 +17,15 @@ script = ExtResource("1_h2gpj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_52tgo")
 
+[node name="RespawnBlockerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnBlockerArea"]
+shape = SubResource("RectangleShape2D_52tgo")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rppjb")
 hframes = 4
+frame = 1
 
 [node name="FloorCol" type="Area2D" parent="."]
 collision_layer = 4
@@ -28,7 +34,14 @@ collision_layer = 4
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_f2gpi")
 
-[node name="CountTimer" type="Timer" parent="."]
+[node name="AnimationTimer" type="Timer" parent="."]
 
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="body_entered" from="RespawnBlockerArea" to="." method="_on_respawn_blocker_area_body_entered"]
+[connection signal="body_exited" from="RespawnBlockerArea" to="." method="_on_respawn_blocker_area_body_exited"]
 [connection signal="body_entered" from="FloorCol" to="." method="_on_floor_col_body_entered"]
-[connection signal="timeout" from="CountTimer" to="." method="_on_CountTimer_timeout"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

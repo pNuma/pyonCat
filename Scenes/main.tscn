@@ -39,7 +39,6 @@ count_time = 2
 
 [node name="TimerBlock2" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(251, 678)
-count_time = 3
 
 [node name="TimerBlock3" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, 102)
@@ -55,7 +54,6 @@ count_time = 2
 
 [node name="TimerBlock6" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(59, -2586)
-count_time = 3
 
 [node name="TimerBlock7" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(123, -3799)
@@ -83,7 +81,6 @@ count_time = 2
 
 [node name="TimerBlock13" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, -4442)
-count_time = 3
 
 [node name="TimerBlock14" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -4634)
@@ -91,15 +88,12 @@ count_time = 2
 
 [node name="TimerBlock15" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(379, -3354)
-count_time = 3
 
 [node name="TimerBlock16" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -2074)
-count_time = 3
 
 [node name="TimerBlock17" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-133, -2138)
-count_time = 3
 
 [node name="TimerBlock18" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -2266)
@@ -111,23 +105,19 @@ count_time = 1
 
 [node name="TimerBlock20" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-69, -922)
-count_time = 2
+count_time = 1
 
 [node name="TimerBlock21" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, -1114)
-count_time = 3
 
 [node name="TimerBlock22" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(-5, -1434)
-count_time = 3
 
 [node name="TimerBlock23" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(187, -1306)
-count_time = 3
 
 [node name="TimerBlock24" parent="TimerBlocks" instance=ExtResource("4_osxxy")]
 position = Vector2(315, -538)
-count_time = 3
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(160, 935)
