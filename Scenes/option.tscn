@@ -38,7 +38,7 @@ corner_radius_bottom_left = 3
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khfqe"]
 bg_color = Color(0.141176, 0.470588, 0.658824, 1)
 
-[node name="option" type="Control"]
+[node name="Option" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_oh5tq")

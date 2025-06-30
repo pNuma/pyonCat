@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://boy6tiwab1ydg"]
+
+[ext_resource type="Script" uid="uid://6rh01gbda83f" path="res://Scenes/tutorial.gd" id="1_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://ceyf3d1evhydy" path="res://Sprites/title_bg.png" id="1_omtrn"]
+[ext_resource type="FontFile" uid="uid://sybxf4qtu7fd" path="res://Fonts/AkazukinPOP2/AkazukiPOP.otf" id="2_i6t4g"]
+[ext_resource type="FontFile" uid="uid://74riid4rllmj" path="res://Fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_p8jf4"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i6t4g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1200.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.133333, 0.478431, 0.678431, 0.952941)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+offset_left = 101.0
+offset_top = 36.0
+offset_right = 1101.0
+offset_bottom = 286.0
+texture = ExtResource("1_omtrn")
+
+[node name="TitleLabel" type="Label" parent="ColorRect/TextureRect"]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 981.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("2_i6t4g")
+theme_override_font_sizes/font_size = 120
+text = "あそびかた"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 633.0
+offset_right = 663.0
+offset_bottom = 708.0
+theme_override_fonts/font = ExtResource("3_p8jf4")
+theme_override_font_sizes/font_size = 60
+text = "もどる"
+flat = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

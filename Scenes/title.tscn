@@ -41,7 +41,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="title" type="Control"]
+[node name="Title" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
