@@ -133,10 +133,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 857.0
-offset_top = -602.0
-offset_right = 897.0
-offset_bottom = -562.0
+offset_left = 600.0
+offset_top = -453.0
+offset_right = 630.3
+offset_bottom = -423.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(-39.5854, 30.6615)
@@ -199,16 +199,17 @@ scale = Vector2(5.141, -22.52)
 color = Color(0.133333, 0.478431, 0.678431, 0.952941)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 970.0
-offset_top = 777.0
-offset_right = 1180.0
-offset_bottom = 889.0
+offset_left = 976.0
+offset_top = 759.0
+offset_right = 1186.0
+offset_bottom = 896.0
 theme_override_fonts/font = ExtResource("1_k16dy")
 theme_override_font_sizes/font_size = 21
-text = "→キー：右移動
-←キー：左移動
-↑キー：しっぽ逆回転
-space：ジャンプ"
+text = "[→]：右移動
+[←]：左移動
+[↑]：しっぽ逆回転
+[space]：ジャンプ
+[Escape]：あきらめる"
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

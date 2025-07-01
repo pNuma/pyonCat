@@ -6,12 +6,11 @@ extends Control
 @onready var exit_button = $CanvasLayer/SelectButtonBOX/ExitButton
 @onready var cursor = $CanvasLayer/SelectCan 
 
+var is_busy: bool = false
+
 func _ready():
+	is_busy = false
 	AudioManager.play_bgm(AudioManager.title_music)
-	start_button.focused.connect(_on_button_focused)
-	tutorial_button.focused.connect(_on_button_focused)
-	options_button.focused.connect(_on_button_focused)
-	exit_button.focused.connect(_on_button_focused)
 	$CanvasLayer/cat_anim/cat.animation = "default"
 	update_highscore_display()
 	
@@ -22,21 +21,36 @@ func _on_button_focused(button_node):
 	My_Global.current_select = button_node.select_id
 	cursor.move_to_target_with_tween(button_node)
 
+# この入力を「処理済み」にして、ビジー状態中のUIのフォーカス移動などを回避。
+func _input(event: InputEvent) -> void:
+	if is_busy:
+		if event.is_action("ui_up") or event.is_action("ui_down") or event.is_action("ui_accept"):
+			get_viewport().set_input_as_handled()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		get_viewport().set_input_as_handled()
 		match My_Global.current_select:
 			"START":
+				is_busy = true
+				#canvas_layer.process_mode = Node.PROCESS_MODE_DISABLED
 				$CanvasLayer/cat_anim/cat.animation = "decision"
 				AudioManager.play_se(AudioManager.decision_sound)
 				await get_tree().create_timer(1.0).timeout
 				#queue_free()
+				#canvas_layer.process_mode = Node.PROCESS_MODE_INHERIT
 				get_tree().change_scene_to_file("res://Scenes/main.tscn")
 			"TUTORIAL":
-				print("TUTORIAL")
+				is_busy = true
+				$CanvasLayer/cat_anim/cat.animation = "decision"
+				AudioManager.play_se(AudioManager.decision_sound)
+				await get_tree().create_timer(1.0).timeout
 				get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
 			"OPTION":
-				print("OPTION")
+				is_busy = true
+				$CanvasLayer/cat_anim/cat.animation = "decision"
+				AudioManager.play_se(AudioManager.decision_sound)
+				await get_tree().create_timer(1.0).timeout
 				get_tree().change_scene_to_file("res://Scenes/option.tscn")
 			"EXIT":
 				get_tree().quit()

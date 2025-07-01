@@ -3,13 +3,13 @@ extends StaticBody2D
 
 # ブロックの初期耐久値（プレイヤーが乗ってから消えるまでの秒数）
 @export var count_time: int = 3
-# プレイヤーがエリアから出てから、実際に復活するまでの遅延時間
+# プレイヤーがエリアから出てから、復活するまでの時間
 @export var respawn_delay_after_exit: float = 1.0
 
 
 # 現在の耐久値
 var current_health: int
-# 復活待機中（プレイヤーが上にいるため）かどうかを管理するフラグ
+# 復活待機中かどうか
 var is_waiting_for_clearance: bool = false
 
 ## 子ノードへの参照
@@ -64,6 +64,7 @@ func _on_respawn_timer_timeout() -> void:
 		
 	reset_block()
 
+#プレイヤーが復活範囲内にいたら遅延
 func _on_respawn_blocker_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and collision.disabled:
 		respawn_timer.start()

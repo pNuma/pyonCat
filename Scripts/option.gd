@@ -12,6 +12,10 @@ func _ready() -> void:
 	
 	bgm_slider.value = db_to_linear(AudioServer.get_bus_volume_db(bgm_bus_idx))
 	se_slider.value = db_to_linear(AudioServer.get_bus_volume_db(se_bus_idx))
+	mute_checkbox.button_pressed = My_Global.is_muted
+	fullscreen_checkbox.button_pressed = My_Global.is_fullscreen
+	
+	bgm_slider.grab_focus()
 
 # BGMスライダー
 func _on_bgm_slider_value_changed(value: float) -> void:

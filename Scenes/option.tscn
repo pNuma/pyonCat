@@ -119,6 +119,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
+focus_neighbor_top = NodePath("../../../../BackButton")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/SESlider")
 max_value = 1.0
 step = 0.01
 
@@ -142,6 +144,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
+focus_neighbor_top = NodePath("../../HBoxContainer/BGMSlider")
+focus_neighbor_bottom = NodePath("../../HBoxContainer3/MuteCheckBox")
 max_value = 1.0
 step = 0.01
 
@@ -161,6 +165,8 @@ layout_mode = 2
 [node name="MuteCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/SoundGroup/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../../HBoxContainer2/SESlider")
+focus_neighbor_bottom = NodePath("../../../../ScreenGroup/HBoxContainer4/FullscreenCheckBox")
 theme_override_fonts/font = ExtResource("3_tx2dh")
 theme_override_font_sizes/font_size = 30
 flat = true
@@ -236,6 +242,8 @@ layout_mode = 2
 [node name="FullscreenCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/ScreenGroup/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../../../SoundGroup/VBoxContainer/HBoxContainer3/MuteCheckBox")
+focus_neighbor_bottom = NodePath("../../../DataGroup/ResetButton")
 theme_override_fonts/font = ExtResource("3_tx2dh")
 theme_override_font_sizes/font_size = 30
 flat = true
@@ -315,6 +323,8 @@ layout_mode = 2
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../DataGroup/ResetButton")
+focus_neighbor_bottom = NodePath("../SoundGroup/VBoxContainer/HBoxContainer/BGMSlider")
 theme_override_fonts/font = ExtResource("3_tx2dh")
 theme_override_font_sizes/font_size = 60
 text = "もどる"

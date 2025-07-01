@@ -114,3 +114,10 @@ func _on_cat_can_goal():
 	My_Global.my_score+=My_Global.remain_time*10
 	My_Global.is_gameclear=true
 	game_over()
+
+#Escapeでギブアップ
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_cancel") and not My_Global.is_gameover:
+		get_viewport().set_input_as_handled()
+		My_Global.my_score = 0
+		game_over()

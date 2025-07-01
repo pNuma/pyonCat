@@ -12,6 +12,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on4kn"]
 bg_color = Color(0.996078, 0.509804, 0.490196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -100,6 +105,9 @@ position = Vector2(348, -1057)
 
 [node name="SpawnPoint2" type="Marker2D" parent="."]
 position = Vector2(284, -1057)
+
+[node name="InitPosition" type="Marker2D" parent="."]
+position = Vector2(326, 710)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
