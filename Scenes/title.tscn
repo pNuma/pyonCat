@@ -201,6 +201,11 @@ position = Vector2(201.429, -168.571)
 sprite_frames = SubResource("SpriteFrames_qxalw")
 flip_h = true
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="focus_entered" from="CanvasLayer/SelectButtonBOX/StartButton" to="CanvasLayer/SelectButtonBOX/StartButton" method="_on_start_button_focus_entered"]
 [connection signal="focus_exited" from="CanvasLayer/SelectButtonBOX/StartButton" to="CanvasLayer/SelectButtonBOX/StartButton" method="_on_start_button_focus_exited"]
 [connection signal="pressed" from="CanvasLayer/SelectButtonBOX/StartButton" to="." method="_on_start_button_pressed"]

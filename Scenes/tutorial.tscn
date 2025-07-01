@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://boy6tiwab1ydg"]
+[gd_scene load_steps=11 format=3 uid="uid://boy6tiwab1ydg"]
 
 [ext_resource type="Script" uid="uid://6rh01gbda83f" path="res://Scenes/tutorial.gd" id="1_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://ceyf3d1evhydy" path="res://Sprites/title_bg.png" id="1_omtrn"]
@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dlewg7073gbsh" path="res://Scenes/timerBlock.tscn" id="7_ys4pu"]
 [ext_resource type="PackedScene" uid="uid://ermkwt1sn0hx" path="res://Scenes/cat_can.tscn" id="8_h2ono"]
 [ext_resource type="PackedScene" uid="uid://ba8ns67se76hv" path="res://Scenes/enemy.tscn" id="10_8va2t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on4kn"]
+bg_color = Color(0.996078, 0.509804, 0.490196, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -24,8 +31,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1200.0
-offset_bottom = 900.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1201.0
+offset_bottom = 899.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -53,43 +62,114 @@ vertical_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
-position = Vector2(250, 639)
+position = Vector2(256, 639)
 tile_set = ExtResource("4_p1f1o")
 format = 2
-layer_0/tile_data = PackedInt32Array(196607, 3, 0, 131072, 65539, 0, 131073, 65539, 0, 131074, 65539, 0, 131075, 65539, 0, 131076, 65539, 0, 131077, 65539, 0, 131078, 65539, 0, 131079, 65539, 0, 131080, 65539, 0, 131081, 65539, 0, 131082, 65539, 0, 131083, 3, 0, 131071, 3, 0, 65535, 3, 0, -1, 3, 0, -65537, 3, 0, -131073, 3, 0, 65547, 3, 0, 11, 3, 0, -65525, 3, 0, -131061, 3, 0, -196597, 3, 0, -262133, 3, 0, -327669, 3, 0, -196609, 3, 0, -262145, 3, 0, -262135, 65536, 0, -65536, 65539, 0, -65535, 65539, 0, -65534, 65539, 0, -65533, 65539, 0, -65532, 65539, 0, -65531, 65539, 0, 7, 65539, 0, -196600, 65536, 0, -262141, 65539, 0, -262140, 65539, 0, -262142, 65539, 0, -655363, 65539, 0, -655362, 65539, 0, -655361, 65539, 0, -720896, 65539, 0, -720895, 65539, 0, -720894, 65539, 0, -720893, 65539, 0, -720892, 65539, 0, -720891, 65539, 0, -720890, 65539, 0, -720889, 65539, 0, -720888, 65539, 0, -720887, 65539, 0, -720886, 65539, 0, -720885, 65539, 0, -720884, 65539, 0, -720883, 65539, 0, -720882, 3, 0, 262158, 3, 0, -655364, 3, 0, 327676, 3, 0, 327677, 65539, 0, 327678, 65539, 0, 327679, 65539, 0, 262144, 65539, 0, 262145, 65539, 0, 262146, 65539, 0, 262147, 65539, 0, 262148, 65539, 0, 262149, 65539, 0, 262150, 65539, 0, 262151, 65539, 0, 262152, 65539, 0, 262153, 65539, 0, 262154, 65539, 0, 262155, 65539, 0, 262156, 65539, 0, 262157, 65539, 0, 196605, 65539, 0, 65534, 65539, 0, -65539, 65539, 0, -196610, 65539, 0, -655365, 3, 0, -589829, 3, 0, -524293, 3, 0, -458757, 3, 0, -393221, 3, 0, -327685, 3, 0, -262149, 3, 0, -196613, 3, 0, -131077, 3, 0, -65541, 3, 0, -5, 3, 0, 65531, 3, 0, 131067, 3, 0, 196603, 3, 0, 262139, 3, 0, 327675, 3, 0, -720881, 3, 0, -655345, 3, 0, -589809, 3, 0, -524273, 3, 0, -458737, 3, 0, -393201, 3, 0, -327665, 3, 0, -262129, 3, 0, -196593, 3, 0, -131057, 3, 0, -65521, 3, 0, 15, 3, 0, 65551, 3, 0, 131087, 3, 0, 196623, 3, 0, 262159, 3, 0, -262148, 65539, 0, -458752, 65536, 0, -458751, 65536, 0)
+layer_0/tile_data = PackedInt32Array(196607, 3, 0, 131072, 65539, 0, 131073, 65539, 0, 131074, 65539, 0, 131075, 65539, 0, 131076, 65539, 0, 131077, 65539, 0, 131078, 65539, 0, 131079, 65539, 0, 131080, 65539, 0, 131081, 65539, 0, 131082, 65539, 0, 131083, 3, 0, 131071, 3, 0, 65535, 3, 0, -1, 3, 0, -65537, 3, 0, -131073, 3, 0, 65547, 3, 0, 11, 3, 0, -65525, 3, 0, -131061, 3, 0, -196597, 3, 0, -262133, 3, 0, -327669, 3, 0, -196609, 3, 0, -262145, 3, 0, -65536, 65539, 0, -65535, 65539, 0, -65534, 65539, 0, -65533, 65539, 0, -65532, 65539, 0, -65531, 65539, 0, 7, 65539, 0, -262141, 65539, 0, -262140, 65539, 0, -262142, 65539, 0, -655363, 65539, 0, -655362, 65539, 0, -655361, 65539, 0, -720896, 65539, 0, -720895, 65539, 0, -720894, 65539, 0, -720893, 65539, 0, -720892, 65539, 0, -720891, 65539, 0, -720890, 65539, 0, -720889, 65539, 0, -720888, 65539, 0, -720887, 65539, 0, -720886, 65539, 0, -720885, 65539, 0, -720884, 65539, 0, -720883, 65539, 0, -720882, 3, 0, 262158, 3, 0, -655364, 3, 0, 327676, 3, 0, 327677, 65539, 0, 327678, 65539, 0, 327679, 65539, 0, 262144, 65539, 0, 262145, 65539, 0, 262146, 65539, 0, 262147, 65539, 0, 262148, 65539, 0, 262149, 65539, 0, 262150, 65539, 0, 262151, 65539, 0, 262152, 65539, 0, 262153, 65539, 0, 262154, 65539, 0, 262155, 65539, 0, 262156, 65539, 0, 262157, 65539, 0, 196605, 65539, 0, 65534, 65539, 0, -65539, 65539, 0, -196610, 65539, 0, -655365, 3, 0, -589829, 3, 0, -524293, 3, 0, -458757, 3, 0, -393221, 3, 0, -327685, 3, 0, -262149, 3, 0, -196613, 3, 0, -131077, 3, 0, -65541, 3, 0, -5, 3, 0, 65531, 3, 0, 131067, 3, 0, 196603, 3, 0, 262139, 3, 0, 327675, 3, 0, -720881, 3, 0, -655345, 3, 0, -589809, 3, 0, -524273, 3, 0, -458737, 3, 0, -393201, 3, 0, -327665, 3, 0, -262129, 3, 0, -196593, 3, 0, -131057, 3, 0, -65521, 3, 0, 15, 3, 0, 65551, 3, 0, 131087, 3, 0, 196623, 3, 0, 262159, 3, 0, -262148, 65539, 0, -917504, 65536, 0, -917503, 65536, 0, -1769471, 65536, 0, -1769472, 0, 0)
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 527.0
-offset_top = 834.0
+offset_top = 828.0
 offset_right = 715.0
-offset_bottom = 909.0
+offset_bottom = 903.0
 theme_override_fonts/font = ExtResource("3_p8jf4")
 theme_override_font_sizes/font_size = 60
 text = "もどる"
 flat = true
 
 [node name="Player" parent="." instance=ExtResource("6_ys4pu")]
+z_index = 1
 position = Vector2(321, 730)
 
 [node name="TimerBlock" parent="." instance=ExtResource("7_ys4pu")]
-position = Vector2(857, 416)
+position = Vector2(864, 416)
 count_time = 1
 
 [node name="TimerBlock2" parent="." instance=ExtResource("7_ys4pu")]
 z_index = 0
-position = Vector2(794, 479)
+position = Vector2(800, 480)
 
 [node name="CatCan" parent="." instance=ExtResource("8_h2ono")]
-position = Vector2(480, 343)
+position = Vector2(483, 343)
 
 [node name="EnemyTimer" type="Timer" parent="."]
 
 [node name="SpawnPoint1" type="Marker2D" parent="."]
-position = Vector2(348, 221)
+position = Vector2(348, -1057)
 
 [node name="SpawnPoint2" type="Marker2D" parent="."]
-position = Vector2(284, 220)
+position = Vector2(284, -1057)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 623.0
+offset_right = 453.0
+offset_bottom = 657.0
+theme_override_fonts/font = ExtResource("3_p8jf4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_on4kn")
+text = "[←][→]で移動"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 684.0
+offset_right = 947.0
+offset_bottom = 755.0
+theme_override_fonts/font = ExtResource("3_p8jf4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_on4kn")
+text = "[Space]で
+ジャンプ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 404.0
+offset_right = 563.0
+offset_bottom = 475.0
+theme_override_fonts/font = ExtResource("3_p8jf4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_on4kn")
+text = "缶を取って
+ゴール"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 453.0
+offset_right = 1016.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("3_p8jf4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_on4kn")
+text = "一定時間で
+消えるよ！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 313.0
+offset_right = 313.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("3_p8jf4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_on4kn")
+text = "[↑]でしっぽを逆回転
+うまく使って敵から
+身を守ろう"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="goal" from="CatCan" to="." method="_on_cat_can_goal"]
